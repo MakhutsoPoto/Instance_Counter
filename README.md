@@ -22,9 +22,12 @@ InstanceCounter uses a class-level counter that increments each time a new objec
 ```text
 instance-counter/
 │
-├── counter.py              # Main class implementation
-├── testcounter.py          # Unit tests
-└── README.md               # Project documentation
+├── counter.py            # Main class implementation
+├── testcounter.py        # Unit tests
+├── Dockerfile            # Docker container configuration
+├── build.sh              # Automated Docker build and run script
+├── requirements.txt      # Project requirements
+└── README.md             # Project documentation            
 ```
 ## How It Works
 
