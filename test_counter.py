@@ -23,6 +23,17 @@ class TestCounter(unittest.TestCase):
         self.assertEqual(instance1.id, 1)
         self.assertEqual(instance2.id, 2)
         self.assertEqual(instance3.id, 3)
+        
+    def test_reset(self):
+        instance1 = counter.InstanceCounter()
+        instance2 = counter.InstanceCounter()
+        
+        counter.InstanceCounter.reset()
+        
+        instance3 = counter.InstanceCounter()
+        self.assertEqual(instance3.id, 1)
+        
+        
 if __name__ == "__main__":
     try:
         unittest.main()

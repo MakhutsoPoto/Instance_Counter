@@ -31,15 +31,15 @@ Each time an InstanceCounter object is created, a class-level variable is increm
 ```python
 import counter
 
-obj1 = counter.InstanceCounter()
-obj2 = counter.InstanceCounter()
+instance1 = counter.InstanceCounter()
+instance2 = counter.InstanceCounter()
 
-print(obj1.id)  # 1
-print(obj2.id)  # 2
+print(instance.id)  # 1
+print(instance.id)  # 2
 
 counter.InstanceCounter.reset()
-obj3 = counter.InstanceCounter()
-print(obj3.id)  # 1
+instance3 = counter.InstanceCounter()
+print(instance3.id)  # 1
 ```
 
 
