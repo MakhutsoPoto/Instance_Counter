@@ -9,9 +9,13 @@ InstanceCounter uses a class-level counter that increments each time a new objec
 - Demonstrates Object-Oriented Programming (OOP) concept Encapsulation: the counter and ID logic are bundled inside the class, hidden from outside code.
 - Demonstrates the difference between class variables (shared across all objects) and instance variables(unique to each object)
 - Includes unit tests using Python’s unittest framework
-  
+- Supports Docker containerization  
+- Includes automated Docker build and run script  
+
 ## Requirements
 - Python 3.x
+- Docker Desktop
+- Bash-compatible terminal (Git Bash, WSL, or Linux terminal)
 - No external libraries required (uses Python standard library only)
 
 ## Project Structure
@@ -63,10 +67,46 @@ python counter.py
 ```bash
 python test_counter.py
 ```
+
+## Docker Support
+
+This project can be built and executed inside a Docker container.
+
+### Build Docker image
+
+```bash
+docker build -t instance-counter .
+```
+
+### Run Docker container
+
+```bash
+docker run --rm instance-counter
+```
+
+---
+
+## Build Script
+
+The project employs shell script to automate the Docker build and execution process.
+
+### Run build script
+
+```bash
+./build.sh
+```
+
+The script:
+- builds the Docker image
+- runs the container
+- removes the container after execution
+
 ## Technologies Used
 - Python 3
 - Object-Oriented Programming (OOP)
 - Unit Testing (unittest)
+- Docker 
+- Bash Scripting
 
 
 ## Learning Outcomes
