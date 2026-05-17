@@ -116,3 +116,5 @@ This project demonstrates understanding of:
 - Object lifecycle in Python
 - Object Oriented Programming principles:Encapsulation 
 - Basic unit testing practices with Python's unittest framework
+- Docker containerization fundamentals  
+- Basic automation using Bash scripting  
