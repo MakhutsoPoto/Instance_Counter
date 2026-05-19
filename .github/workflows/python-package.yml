@@ -1,0 +1,41 @@
+# CI/CD flow for the Instrance_Counter
+# This workflow automatically :
+#  installs python dependencies 
+#  runs unit tests and 
+#  builds the Docker image 
+# on every pull/push request to the main branch. 
+
+name: Python CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        
+    - name: Run unit tests
+      run: |
+        python test_counter.py
+
+    - name: Build Docker image
+      run: | 
+        docker build -t instance-counter .
