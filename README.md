@@ -10,7 +10,8 @@ InstanceCounter uses a class-level counter that increments each time a new objec
 - Demonstrates the difference between class variables (shared across all objects) and instance variables(unique to each object)
 - Includes unit tests using Python’s unittest framework
 - Supports Docker containerization  
-- Includes automated Docker build and run script  
+- Includes automated Docker build and run script
+- Uses GitHub Actions for CI/CD automation  
 
 ## Requirements
 - Python 3.x
@@ -22,6 +23,9 @@ InstanceCounter uses a class-level counter that increments each time a new objec
 ```text
 instance-counter/
 │
+├── .github/
+│   └── workflows/
+│       └── ci.yml          # GitHub Actions CI/CD workflow
 ├── counter.py            # Main class implementation
 ├── testcounter.py        # Unit tests
 ├── Dockerfile            # Docker container configuration
@@ -103,6 +107,15 @@ The script:
 - builds the Docker image
 - runs the container
 - removes the container after execution
+## CI/CD Pipeline
+
+This project uses GitHub Actions to automate:
+
+- unit testing
+- Python dependencies installs
+- Docker image builds
+
+The workflow runs automatically on every push and pull request to the `main` branch.
 
 ## Technologies Used
 - Python 3
@@ -110,6 +123,7 @@ The script:
 - Unit Testing (unittest)
 - Docker 
 - Bash Scripting
+- Github Actions
 
 
 ## Learning Outcomes
@@ -120,4 +134,5 @@ This project demonstrates understanding of:
 - Object Oriented Programming principles:Encapsulation 
 - Basic unit testing practices with Python's unittest framework
 - Docker containerization fundamentals  
-- Basic automation using Bash scripting  
+- Basic automation using Bash scripting
+- CI/CD automation with GitHub Actions 
